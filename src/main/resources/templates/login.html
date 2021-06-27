@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/css/example.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>  
+    <center>
+    <h1 class="logintext">
+            Welcome to Restaurant Advisor <br/>
+            Login Below:
+    </h1>
+
+    <span th:text="${message}" />
+
+    <form action="#" th:action="@{/RestaurantLogin}" th:object="${customer}" method="post">
+        <table class = "prettytable" border="1">
+            <tr>
+                <td>Username :</td>
+                <td><input type="text" th:field="*{email}" value=""/></td>
+            </tr>
+            <tr>
+                <td>Password :</td>
+                <td><input type="password" th:field="*{password}" value=""/></td>
+            </tr>
+            
+            <tr>
+                <td><input type="submit" value="Submit" /></td>
+                <td><input type="reset" value="clear" name="Clear"/></td>
+            </tr>
+        </table>
+    </form>
+
+    <p>First time users, register <a th:href="@{/NewUser}">here</a>.</p>
+    
+    </center>
+</body>
+</html>
+

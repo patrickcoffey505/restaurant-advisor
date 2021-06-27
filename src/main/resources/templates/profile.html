@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="/css/example.css" />    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <container class="navbar">
+      <div class="left">
+        <div class="pages"><a th:href="@{/Home}">Home</a></div>
+        <div class="pages active-nav-link"><a th:href="@{/Profile}">Profile</a></div>
+        <div class="pages"><a th:href="@{/Order}">Order</a></div>
+        <div class="pages"><a th:href="@{/Review}">Review</a></div>
+        <div class="pages"><a th:href="@{/Logout}">Logout</a></div>
+      </div>
+      <div class="right">
+        <div class="Site Title">Restaurant Advisor</div>
+      </div>
+    </container>
+
+    <center>
+
+      
+    <a th:href="@{/EditProfile}">Edit Profile</a>
+    </br>
+
+    name: <span th:text="${customer.fName}" /> <span th:text="${customer.lName}" /><br/>
+    email: <span th:text="${customer.email}" /><br/>
+    phone: <span th:text="${customer.phone}" /><br/>
+    address: <span th:text="${customer.streetNo}" />
+             <span th:text="${customer.streetName}" />
+             <span th:text="${customer.city}" />
+             <span th:text="${customer.state}" />
+             <span th:text="${customer.zip}" /><br/>
+
+    <br/>
+
+    <h1>Orders</h1>
+    <table class="prettytable">
+      <thead>
+        <th>Date</th>
+        <th>Restaurant</th>
+      </thead>
+      <tr th:each="order : ${orders}">
+        <td><span th:text="${order.orderDate}"></span></td>
+        <td><span th:text="${order.restID}"></span></td>
+      </tr>
+    </table>
+    </br>
+
+    <h1>Reviews</h1>
+    <table class="prettytable">
+      <thead>
+        <th>Date</th>
+        <th>Restaurant</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Rating</th>
+      </thead>
+      <tr th:each="review : ${reviews}">
+        <td><span th:text="${review.reviewDate}"></span></td>
+        <td><span th:text="${review.restID}"></span></td>
+        <td><span th:text="${review.reviewTitle}"></span></td>
+        <td><span th:text="${review.reviewDescr}"></span></td>
+        <td><span th:text="${review.rating}"></span></td>
+      </tr>
+    </table>
+
+    </center>    
+</body>
+</html>

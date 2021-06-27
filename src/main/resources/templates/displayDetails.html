@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Restaurant Details</title>
+    <link rel="stylesheet" type="text/css" href="/css/example.css" />    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+  <container class="navbar">
+    <div class="left">
+      <div class="pages active-nav-link"><a th:href="@{/Home}">Home</a></div>
+      <div class="pages"><a th:href="@{/Profile}">Profile</a></div>
+      <div class="pages"><a th:href="@{/Order}">Order</a></div>
+      <div class="pages"><a th:href="@{/Review}">Review</a></div>
+      <div class="pages"><a th:href="@{/Logout}">Logout</a></div>
+    </div>
+    <div class="right">
+      <div class="Site Title">Restaurant Advisor</div>
+    </div>
+    </container>
+
+    <center>
+
+    name: <span th:text="${restaurant.rName}" /><br/>
+    email: <span th:text="${restaurant.email}" /><br/>
+    phone: <span th:text="${restaurant.phone}" /><br/>
+    address: <span th:text="${restaurant.streetNo}" />
+             <span th:text="${restaurant.streetName}" />
+             <span th:text="${restaurant.city}" />
+             <span th:text="${restaurant.state}" />
+             <span th:text="${restaurant.zip}" /><br/>
+    hours: <span th:text="${restaurant.hours}" /><br/>
+    dining type: <span th:text="${restaurant.diningType}" /><br/>
+    price range: <span th:text="${restaurant.priceRange}" /><br/>
+    delivery flag: <span th:text="${restaurant.deliveryFlag}" /><br/>
+    outdoor seating flag: <span th:text="${restaurant.outdoorSeatingFlag}" /><br/>
+
+    <br/>
+
+    <h3>Reviews</h3></br>
+    <table class="prettytable">
+      <thead>
+        <th>Date</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Rating</th>
+      </thead>
+      <tr th:each="review : ${reviews}">
+        <td><span th:text="${review.reviewDate}"></span></td>
+        <td><span th:text="${review.reviewTitle}"></span></td>
+        <td><span th:text="${review.reviewDescr}"></span></td>
+        <td><span th:text="${review.rating}"></span></td>
+      </tr>
+    </table>
+
+    </center>    
+</body>
+</html>

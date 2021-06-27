@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Review</title>
+    <link rel="stylesheet" type="text/css" href="/css/example.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+  <container class="navbar">
+    <div class="left">
+      <div class="pages"><a th:href="@{/Home}">Home</a></div>
+      <div class="pages"><a th:href="@{/Profile}">Profile</a></div>
+      <div class="pages"><a th:href="@{/Order}">Order</a></div>
+      <div class="pages active-nav-link"><a th:href="@{/Review}">Review</a></div>
+      <div class="pages"><a th:href="@{/Logout}">Logout</a></div>
+    </div>
+    <div class="right">
+      <div class="Site Title">Restaurant Advisor</div>
+    </div>
+  </container>
+  
+  <center>
+
+  <form action="#" th:action="@{/Review}" th:object="${formCommand}" method="post">
+
+    <span th:text="${message}" />
+
+    <p>Restaurant: <select th:field="*{dropdownSelectedValue}" default="1001">
+      <option 
+          th:each="rest: ${restaurant}"
+          th:value="${rest.restID}"
+          th:text="${rest.rName}" >
+        </option>
+    </select></p>
+
+    <p>Review Title: <input type="text" th:field="*{textField}" /></p>
+  
+    <p>Review Description: <textarea th:field="*{textareaField}" ></textarea></p>
+  
+    <p>Rating: <input type="number" th:field="*{numberField}" min="1" max="5"/></p>
+
+    <p>
+      <input type="submit" value="Submit" />
+      <input type="reset" value="clear" name="Clear"/>
+    </p>
+
+  </form>  
+  </center> 
+    
+</body>
+</html>

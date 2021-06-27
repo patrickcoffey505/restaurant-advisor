@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+  <title>Order</title>
+  <link rel="stylesheet" type="text/css" href="/css/example.css" />    
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <container class="navbar">
+      <div class="left">
+        <div class="pages"><a th:href="@{/Home}">Home</a></div>
+        <div class="pages"><a th:href="@{/Profile}">Profile</a></div>
+        <div class="pages active-nav-link"><a th:href="@{/Order}">Order</a></div>
+        <div class="pages"><a th:href="@{/Review}">Review</a></div>
+        <div class="pages"><a th:href="@{/Logout}">Logout</a></div>
+      </div>
+      <div class="right">
+        <div class="Site Title">Restaurant Advisor</div>
+      </div>
+    </container>
+
+    <center>
+
+        Order Date: <span th:text=${order.orderDate} /> </br>
+        Cust Email: <span th:text=${order.custEmail} /> </br>
+        Rest ID: <span th:text=${order.restID} /> </br>
+        
+        <a th:href="@{/OrderDetails}">Add Items</a>
+
+    </center>
+</body>
+</html>

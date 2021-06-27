@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="/css/example.css" />  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <center>
+    <h1 class="logintext">
+        Restaurant Advisor Site <br/>
+        New User Sign-Up
+    </h1>
+
+    <span th:text="${message}" />
+
+    <form action="#" th:action="@{/NewUser}" th:object="${customer}" method="post">
+    
+    <table class="prettytable" border=1>
+        <tr>
+            <td><span color = red>*</span>First Name:</td>
+            <td><input type="text" th:field="*{fName}" value="" default=""/></td>
+        </tr>
+        <tr>
+            <td><span color = red>*</span>Last Name:</td>
+            <td><input type="text" th:field="*{lName}" value="" default=""/></td>
+        </tr>
+        <tr>
+            <td><span color = red>*</span>Email:</td>
+            <td><input type="text" th:field="*{email}" value="" default=""/></td>
+        </tr>
+        <tr>
+            <td>Street No:</td>
+            <td><input type="text" th:field="*{streetNo}" value="" default=""/></td>
+        </tr>
+        <tr>
+            <td>Street Name:</td>
+            <td><input type="text" th:field="*{streetName}" value="" default=""/></td>
+        </tr>
+        <tr>
+            <td>City:</td>
+            <td><input type="text" th:field="*{city}" value="" default=""/></td>
+        </tr>
+        <tr>
+            <td>State:</td>
+            <td><input type="text" th:field="*{state}" value="" default=""/></td>
+        </tr>
+        <tr>
+            <td>Zip:</td>
+            <td><input type="text" th:field="*{zip}" value="" default=""/></td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td><input type="text" th:field="*{phone}" value="" default=""/></td>
+        </tr>
+        <tr>
+            <td><span color = red>*</span>Password:</td>
+            <td><input type="text" th:field="*{password}" value="" default=""/></td>
+        </tr>
+    </table>
+    
+    <INPUT TYPE="submit" value="Proceed">
+    <INPUT TYPE="reset" value="reset">
+
+    </form>
+    </center>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+/* Master Styles */
+body {
+	margin: 0px;
+	font-family: sans-serif;
+  background-color: cornsilk;
+  }
+  
+  .container {
+	display: grid;
+	grid-template-columns: 1fr;
+  }
+  
+  /* Nav Styles */
+  .navbar {
+	/* background-color: red; */
+	display: flex;
+	justify-content: space-between;
+	padding: 38px;
+  }
+  
+  .left {
+	display: flex;
+	font-size: 0.9em;
+  }
+  
+  .pages {
+	height: 22px;
+	margin-right: 20px;
+	border-bottom: 1px solid transparent;
+	transition: border-bottom 0.5s;
+  }
+  
+  .pages a {
+	color: #8a8a8a;
+	text-decoration: none;
+	transition: color 0.5s;
+  }
+  
+  .pages:hover {
+	border-bottom: 1px solid black;
+  }
+  
+  .pages a:hover {
+	color: black;
+  }
+  
+  .active-nav-link {
+	border-bottom: 1px solid black;
+  }
+  
+  .active-nav-link a {
+	color: black !important;
+  }
+  
+  /* Content Styles */
+  /* comments*/
+  h1, h2, h3, h4 {
+	color:#324f9d;
+	padding-left:10px;
+  }
+  h1 {
+	font-size:110%;
+	padding:5px;
+	padding-left:10px;
+	margin:0px;
+  }
+  h2, h3, h4 {
+	padding:5px;
+	padding-left:10px;
+	margin:0px;
+	font-size:100%;
+	font-variant:small-caps;	
+  }
+  
+  
+  p, ul, dd, dt, dl {
+	padding-left:10px;	
+	padding-right:10px;
+  }
+  li {
+	margin-left:20px;
+	padding-left:5px;
+  }
+  
+  table {
+	margin-left:20px;
+	margin-right:5px;
+  }
+  body {
+	margin:0px;
+	padding:0px;
+	font: 100% sans-serif;
+  }
+  
+  a {
+	text-decoration:none;
+	color: indianred;
+	font-weight:bold;
+  }
+  a:visited {
+	color: indianred
+  }
+  
+  #highlight {
+	   background-color:  #7FFFD4; /* Aquamarine  */
+  }
+  
+  pre.code {
+   border: 1px dashed #3c78b5;
+	font-size: 12px;
+  font-family: Courier;
+	margin: 10px;
+  line-height: 13px;
+  }
+  
+  table.prettytable {
+  margin: 1em 1em 1em 2em;
+  background: cornsilk;
+  border-collapse: collapse;
+  }
+  table.prettytable th, table.prettytable td {
+  border: 0.01mm black solid;
+  text-align: center;
+  padding: 0.4em;
+  }
+  table.prettytable th {
+  background: black;
+  color: white;
+  }
+  table.prettytable caption {
+  margin-left: inherit;
+  margin-right: inherit;
+  } 
+
+  .restlink {
+    font-size: larger;
+  } 
+
+  .logintext {
+    color: indianred;
+    text-decoration: wavy;
+    font-size: xx-large;
+  }

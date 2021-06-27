@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+  <title>Review Results</title>
+  <link rel="stylesheet" type="text/css" href="/css/example.css" />  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <container class="navbar">
+      <div class="left">
+        <div class="pages"><a th:href="@{/Home}">Home</a></div>
+        <div class="pages"><a th:href="@{/Profile}">Profile</a></div>
+        <div class="pages"><a th:href="@{/Order}">Order</a></div>
+        <div class="pages active-nav-link"><a th:href="@{/Review}">Review</a></div>
+        <div class="pages"><a th:href="@{/Logout}">Logout</a></div>
+      </div>
+      <div class="right">
+        <div class="Site Title">Restaurant Advisor</div>
+      </div>
+    </container>
+
+    <center>
+
+        <span th:text="${message}" /> </br>
+
+        Review Title: <span th:text=${review.reviewTitle} /> </br>
+        Review Description: <span th:text=${review.reviewDescr} /> </br>
+        Cust Email: <span th:text=${review.custEmail} /> </br>
+        Rest ID: <span th:text=${review.restID} /> </br>
+        Review Date: <span th:text=${review.reviewDate} /> </br>
+        Rating: <span th:text=${review.rating} /> </br>
+
+    </center>
+</body>
+</html>

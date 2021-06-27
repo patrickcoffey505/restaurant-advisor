@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Profile</title>
+    <link rel="stylesheet" type="text/css" href="/css/example.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <container class="navbar">
+      <div class="left">
+        <div class="pages"><a th:href="@{/Home}">Home</a></div>
+        <div class="pages active-nav-link"><a th:href="@{/Profile}">Profile</a></div>
+        <div class="pages"><a th:href="@{/Order}">Order</a></div>
+        <div class="pages"><a th:href="@{/Review}">Review</a></div>
+        <div class="pages"><a th:href="@{/Logout}">Logout</a></div>
+      </div>
+      <div class="right">
+        <div class="Site Title">Restaurant Advisor</div>
+      </div>
+    </container>
+
+    <center>
+
+    <span th:text="${message}" />
+
+    <form action="#" th:action="@{/EditProfile}" th:object="${customer}" method="post">
+        <table class = "prettytable" border="1">
+            <tr>
+                <td>First Name :</td>
+                <td><input type="text" th:field="*{fName}"/></td>
+            </tr>
+            <tr>
+                <td>Last Name :</td>
+                <td><input type="text" th:field="*{lName}"/></td>
+            </tr>
+            <tr>
+                <td>Phone :</td>
+                <td><input type="text" th:field="*{phone}"/></td>
+            </tr>
+            <tr>
+                <td>Street Number :</td>
+                <td><input type="text" th:field="*{streetNo}"/></td>
+            </tr>
+            <tr>
+                <td>Street Name :</td>
+                <td><input type="text" th:field="*{streetName}"/></td>
+            </tr>
+            <tr>
+                <td>City :</td>
+                <td><input type="text" th:field="*{city}"/></td>
+            </tr>
+            <tr>
+                <td>State :</td>
+                <td><input type="text" th:field="*{state}"/></td>
+            </tr>
+            <tr>
+                <td>ZIP :</td>
+                <td><input type="text" th:field="*{zip}"/></td>
+            </tr>
+        </table>
+
+
+        Password: <input type="password" th:field="*{password}" value="" default=""/> <br/>
+        <input type="submit" value="Submit" />
+        <input type="reset" value="clear" name="Clear"/>
+    </form>
+    
+    </center>
+</body>
+</html>
+

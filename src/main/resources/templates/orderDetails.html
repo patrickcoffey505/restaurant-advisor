@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Order</title>
+    <link rel="stylesheet" type="text/css" href="/css/example.css" />    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <container class="navbar">
+      <div class="left">
+        <div class="pages"><a th:href="@{/Home}">Home</a></div>
+        <div class="pages"><a th:href="@{/Profile}">Profile</a></div>
+        <div class="pages active-nav-link"><a th:href="@{/Order}">Order</a></div>
+        <div class="pages"><a th:href="@{/Review}">Review</a></div>
+        <div class="pages"><a th:href="@{/Logout}">Logout</a></div>
+      </div>
+      <div class="right">
+        <div class="Site Title">Restaurant Advisor</div>
+      </div>
+    </container>
+
+    <center>
+
+    <form action="#" th:action="@{/OrderDetails}" th:object="${itemform}" th:method="post">
+
+    <table class="prettytable">
+		<tr>
+            <th>Item Name</th>
+			<th>Price</th>
+            <th>Quantity</th>
+            <th><span th:text="${orderitems}"/></th>
+		</tr>
+
+        <tr th:each="item, stat : *{orderitems}">
+            <td>
+                <span th:text="${item.foodName}">
+            </td>
+            <td>
+                <span th:text="${item.price}">
+            </td>
+            <td>
+                <input type="number" th:field="*{orderitems[__${stat.index}__].qty}" min="0"/>
+            </td>
+            <td>
+                <input hidden th:field="*{orderitems[__${stat.index}__].foodName}"/>
+            </td>
+            <td>
+                <input hidden th:field="*{orderitems[__${stat.index}__].price}"/>
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Save" />
+    <input type="reset" value="clear" name="Clear"/>
+
+    </form>
+
+    </center>
+    
+</body>
+</html>
